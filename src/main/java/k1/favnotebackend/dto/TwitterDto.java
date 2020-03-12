@@ -1,17 +1,15 @@
 package k1.favnotebackend.dto;
 
-import java.util.Date;
+import lombok.Getter;
 
-public class TwitterDto extends ItemDto {
-
-    public String getTwitterName() {
-        return twitterName;
-    }
+@Getter
+public class TwitterDto extends AbstractDto {
 
     private String twitterName;
 
-    public TwitterDto(Long id, String title, String content, Date created, Long userId, String twitterName1) {
-        super(id, title, content, created, userId);
-        this.twitterName = twitterName1;
+    public TwitterDto(Long id, String title, String content, Long userId, String twitterName) {
+        super(id, title, content, userId);
+        this.twitterName = twitterName;
     }
+
 }

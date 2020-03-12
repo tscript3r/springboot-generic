@@ -1,30 +1,25 @@
 package k1.favnotebackend.model;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import javax.persistence.Entity;
 import javax.validation.constraints.NotNull;
-import java.util.Date;
 
 @Entity
-public class Article extends Item{
+@Getter
+@Setter
+@NoArgsConstructor
+public class Article extends AbstractEntity {
 
     @NotNull
     private String articleUrl;
 
-    public Article(){
-
-    }
-
-    public Article(String title, String content, Date created, String articleUrl, User user) {
-        super(title,content,created, user);
+    public Article(String title, String content, String articleUrl, User user) {
+        super(title, content, user);
         this.articleUrl = articleUrl;
     }
 
-    public String getArticleUrl() {
-        return articleUrl;
-    }
-
-    public void setArticleUrl(String articleUrl) {
-        this.articleUrl = articleUrl;
-    }
 }
 

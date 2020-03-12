@@ -1,17 +1,15 @@
 package k1.favnotebackend.model;
 
+import lombok.NoArgsConstructor;
+
 import javax.persistence.Entity;
-import java.util.Date;
 
 @Entity
-public class Note extends Item {
+@NoArgsConstructor
+public class Note extends AbstractEntity {
 
-
-    public Note(){
-
+    public Note(String title, String content, User user) {
+        super(title, content, user);
     }
 
-    public Note(String title, String content, Date created, User user) {
-        super(title,content,created, user);
-    }
 }
