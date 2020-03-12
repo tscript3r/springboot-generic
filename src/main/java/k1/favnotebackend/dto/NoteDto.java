@@ -1,11 +1,9 @@
 package k1.favnotebackend.dto;
 
+public class NoteDto extends AbstractDto {
 
-import java.util.Date;
-
-public class NoteDto extends ItemDto {
-
-    public NoteDto(Long id, String title, String content, Date created, Long userId) {
-        super(id, title, content, created, userId);
+    public NoteDto(Long id, String title, String content, Long userId) {
+        super(id, title, content, userId);
     }
+
 }
